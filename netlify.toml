@@ -1,16 +1,8 @@
-# netlify.toml
 [build]
-  # The base directory to run the build command (optional)
-  # base = "src"
+  publish = "build"  # This is where your build output directory is
+  command = "npm run build"  # The build command for your project
 
-  # The directory that contains your build output (e.g., 'build' for Create React App)
-  publish = "build"
-
-  # The command to build your project
-  command = "npm run build"
-
-# Redirects and rewrites (optional)
 [[redirects]]
-  from = "/old-path"
-  to = "/new-path"
-  status = 301
+  from = "/*"
+  to = "/index.html"
+  status = 200
